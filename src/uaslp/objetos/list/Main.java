@@ -1,17 +1,23 @@
 package uaslp.objetos.list;
 
+import uaslp
 import uaslp.objetos.list.linkedlist.LinkedList;
 import uaslp.objetos.list.linkedlist.LinkedListiterator;
 
 
-public class Main{
-
+public class Main {
 
     public static void main(String[] args) {
+
 
         LinkedList team1 = new LinkedList();
         LinkedList team2 = new LinkedList();
         LinkedList team3 = new LinkedList();
+
+        System.out.println(LinkedList.getListsCount());
+
+        LinkedList.getName();
+        ArrayList.getName();
 
 
         team1.addAtTail("Jesús");

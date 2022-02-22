@@ -5,6 +5,16 @@ public class LinkedList {
     private Node tail;
     private int size;
 
+    private static int listsCount; //desde el principio hasta el finl del programa
+
+
+    public LinkedList(){
+        listsCount++;
+    }
+    public static int getListsCount(){
+        return listsCount;
+    }
+
     public void addAtTail(String data) {
         Node node = new Node(data);
 
