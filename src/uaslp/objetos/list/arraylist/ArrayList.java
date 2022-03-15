@@ -1,6 +1,10 @@
 package uaslp.objetos.list.arraylist;
 
-public class ArrayList {
+
+import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.List;
+
+public class ArrayList implements List {
 
     private static final int DEFAULT_SIZE = 2;
     private String[] array;
@@ -55,7 +59,7 @@ public class ArrayList {
     public String getAt(int index){
        return index >= 0 && index <size ? array[index] : null;
     }
-    public ArrayListiterator getIterator(){
+    public Iterator getIterator(){
        return new ArrayListiterator(this);
     }
     public int getSize(){

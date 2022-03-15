@@ -1,26 +1,14 @@
 package uaslp.objetos.list;
 
-
 import uaslp.objetos.list.arraylist.ArrayList;
-import uaslp.objetos.list.arraylist.ArrayListiterator;
 import uaslp.objetos.list.linkedlist.LinkedList;
-import uaslp.objetos.list.linkedlist.LinkedListiterator;
-
+//import uaslp.objetos.list.linkedlist.LinkedListiterator;
 
 public class Main {
-
-    public static void main(String[] args) {
-
-
-        ArrayList team1 = new ArrayList();
-        ArrayList team2 = new ArrayList();
-        ArrayList team3 = new ArrayList();
-
-        //System.out.println(LinkedList.getListsCount());
-
-        //LinkedList.getName();
-        //ArrayList.getName();
-
+    public static void nuevainterfazarray () {
+        List team1 = new ArrayList();
+        List team2 = new ArrayList();
+        List team3 = new ArrayList();
 
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
@@ -32,7 +20,7 @@ public class Main {
 
         team3.addAtFront("Imelda");
 
-        ArrayListiterator iterator;
+        Iterator iterator;
 
         iterator = team1.getIterator();
 
@@ -109,7 +97,7 @@ public class Main {
         // Tadeo
         // Isai
 
-        if(team1.getAt(1).equals("Salomón")){
+        if (team1.getAt(1).equals("Salomón")) {
             team1.setAt(1, "Luis");
         }
 
@@ -129,18 +117,10 @@ public class Main {
 
 
     }
-    public static void mainLinkedList(String[] args) {
-
-
-        LinkedList team1 = new LinkedList();
-        LinkedList team2 = new LinkedList();
-        LinkedList team3 = new LinkedList();
-
-        //System.out.println(LinkedList.getListsCount());
-
-        //LinkedList.getName();
-        //ArrayList.getName();
-
+    public static void nuevainterfazlist () {
+        List team1 = new LinkedList();
+        List team2 = new LinkedList();
+        List team3 = new LinkedList();
 
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
@@ -152,7 +132,7 @@ public class Main {
 
         team3.addAtFront("Imelda");
 
-        LinkedListiterator iterator;
+        Iterator iterator;
 
         iterator = team1.getIterator();
 
@@ -229,7 +209,7 @@ public class Main {
         // Tadeo
         // Isai
 
-        if(team1.getAt(1).equals("Salomón")){
+        if (team1.getAt(1).equals("Salomón")) {
             team1.setAt(1, "Luis");
         }
 
@@ -248,5 +228,11 @@ public class Main {
         // Yael
 
 
+    }
+    public static void main ( String[] args ) {
+        System.out.println("----Listas de tipo ArrayList----");
+        nuevainterfazarray();
+        System.out.println("----Listas de tipo LinkedList----");
+        nuevainterfazlist();
     }
 }
