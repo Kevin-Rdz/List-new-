@@ -1,10 +1,15 @@
 package uaslp.objetos.list.linkedlist;
 
+import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 
-public class LinkedList implements List {
-    private Node head;
-    private Node tail;
+public class LinkedList <T> implements List <T> {
+    //private static final int UNA_CONSTANTE = 10;
+
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     private static int listsCount; //desde el principio hasta el finl del programa
@@ -17,8 +22,12 @@ public class LinkedList implements List {
         return listsCount;
     }
 
-    public void addAtTail(String data) {
-        Node node = new Node(data);
+    public void addAtTail(T data) throws NotNullValuesAllowedException{
+
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+        Node<T> node = new Node<>(data);
 
         if (size == 0) {
             head = node;
@@ -31,8 +40,11 @@ public class LinkedList implements List {
         size++;
     }
 
-    public void addAtFront(String data) {
-        Node node = new Node(data);
+    public void addAtFront(T data) throws NotNullValuesAllowedException {
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+        Node<T> node = new Node<>(data);
 
         if (size == 0) {
             tail = node;
@@ -45,8 +57,8 @@ public class LinkedList implements List {
         size++;
     }
 
-    public void remove(int index) {
-        Node node = findNode(index);
+    public void remove(int index) throws NotValidIndexException {
+        Node<T> node = findNode(index);
 
         if(node == null){
             return;
@@ -78,8 +90,11 @@ public class LinkedList implements List {
         size = 0;
     }
 
-    public void setAt(int index, String data) {
-        Node node = findNode(index);
+    public void setAt(int index, T data) throws NotNullValuesAllowedException, NotValidIndexException {
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+        Node<T> node = findNode(index);
 
         if(node != null){
             node.data = data;
@@ -90,27 +105,29 @@ public class LinkedList implements List {
      * @param index 0-index
      * @return element at position index
      */
-    public String getAt(int index) {
-        Node node = findNode(index);
+    //manejar la excepcion es hacer algo debido al recurso alternativo
+
+    public T getAt(int index) throws NotValidIndexException {
+        Node<T> node = findNode(index);
 
         return node == null ? null : node.data;
     }
 
-    public LinkedListiterator getIterator() {
-        return new LinkedListiterator(head);
+    public Iterator<T> getIterator() {
+        return new LinkedListiterator<>(head);
     }
 
     public int getSize() {
         return size;
     }
 
-    private Node findNode(int index) {
+    private Node<T> findNode(int index) throws NotValidIndexException {
 
         if(index < 0 || index >= size){
-            return null;
+            throw new NotValidIndexException(index);
         }
 
-        Node node = head;
+        Node<T> node = head;
         int currentIndex = 0;
 
         while (currentIndex != index) {
