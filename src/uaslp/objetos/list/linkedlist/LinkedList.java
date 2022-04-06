@@ -15,12 +15,12 @@ public class LinkedList <T> implements List <T> {
     private static int listsCount; //desde el principio hasta el finl del programa
 
 
-    public LinkedList(){
+    /*public LinkedList(){
         listsCount++;
     }
     public static int getListsCount(){
-        return listsCount;
-    }
+      return listsCount;
+    }*/
 
     public void addAtTail(T data) throws NotNullValuesAllowedException{
 
@@ -59,11 +59,11 @@ public class LinkedList <T> implements List <T> {
 
     public void remove(int index) throws NotValidIndexException {
         Node<T> node = findNode(index);
-
+/*
         if(node == null){
             return;
         }
-
+*/
         if(size == 1){
             head = null;
             tail = null;
@@ -96,10 +96,9 @@ public class LinkedList <T> implements List <T> {
         }
         Node<T> node = findNode(index);
 
-        if(node != null){
+
             node.data = data;
         }
-    }
 
     /**
      * @param index 0-index
