@@ -3,6 +3,7 @@ package uaslp.objetos.list.arraylist;
 
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 
 public class ArrayList<T> implements List<T> {
 
@@ -50,7 +51,7 @@ public class ArrayList<T> implements List<T> {
        }
        size = 0;
     }
-    public void setAt(int index, T data){
+    public void setAt(int index, T data) throws NotNullValuesAllowedException {
        if(index >= 0 && index > size){
            array[index] = data;
        }
