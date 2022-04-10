@@ -10,7 +10,7 @@ public class LinkedList <T> implements List <T> {
 
     private Node<T> head;
     private Node<T> tail;
-    private int size;
+    private int size = 1;
 
     private static int listsCount; //desde el principio hasta el finl del programa
 
