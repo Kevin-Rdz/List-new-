@@ -1,15 +1,16 @@
-package uaslp.objetos.list.arraylist;
+package uaslp.objetos.list.linkedlist;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.arraylist.ArrayList;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.linkedlist.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ArrayListTest {
+public class ArrayListTest{
 
     @Test
     public void givenNewList_whenGetSize_thenResultIsZero () {
